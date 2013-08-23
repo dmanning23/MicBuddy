@@ -30,12 +30,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\Source\MicHandle.cs">
-      <Link>MicHandle.cs</Link>
+    <Compile Include="..\Source\Microphone.cs">
+      <Link>Microphone.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\externals\MonoGame\ThirdParty\Lidgren.Network\Lidgren.Network.Windows.csproj">
+      <Project>{AE483C29-042E-4226-BA52-D247CE7676DA}</Project>
+      <Name>Lidgren.Network.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\externals\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+      <Project>{7DE47032-A904-4C29-BD22-2D235E8D91BA}</Project>
+      <Name>MonoGame.Framework.WindowsGL</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
