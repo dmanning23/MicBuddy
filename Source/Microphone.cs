@@ -7,7 +7,7 @@ using OpenTK.Audio.OpenAL;
 
 namespace MicBuddy
 {
-	public class Microphone
+	public class Microphone : IMicrophone
 	{
 		#region Fields
 

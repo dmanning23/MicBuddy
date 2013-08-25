@@ -39,6 +39,9 @@
     <Compile Include="..\Source\Microphone.cs">
       <Link>Microphone.cs</Link>
     </Compile>
+    <Compile Include="..\Source\IMicrophone.cs">
+      <Link>IMicrophone.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
