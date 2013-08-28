@@ -48,11 +48,6 @@ namespace MicBuddy
 		private const int numberOfSamples = 1024;
 
 		/// <summary>
-		/// Gain of microphone
-		/// </summary>
-		private const float microphoneGain = 4.0f;
-
-		/// <summary>
 		/// How many previous frames of sound are analyzed.
 		/// </summary>
 		public const int recordedLength = 10;
@@ -127,7 +122,7 @@ namespace MicBuddy
 			CurrentVolume = 0.0f;
 			AverageVolume = 0.0f;
 			MicrophoneName = deviceCaptureName;
-			InitializeMicrophone(audioSamplingRate, microphoneGain, deviceCaptureName, ALFormat.Mono16, numberOfSamples);
+			InitializeMicrophone(audioSamplingRate, deviceCaptureName, ALFormat.Mono16, numberOfSamples);
 		}
 
 		/// <summary>
@@ -191,10 +186,8 @@ namespace MicBuddy
 			}
 		}
 
-		private bool InitializeMicrophone(int samplingRate, float gain, string deviceCaptureName, ALFormat format, int bufferSize)
+		private bool InitializeMicrophone(int samplingRate, string deviceCaptureName, ALFormat format, int bufferSize)
 		{
-			AL.Listener(ALListenerf.Gain, gain);
-
 			SampleToByte = NumberOfBytesPerSample(format);
 
 			buffer = new byte[bufferSize * SampleToByte];
