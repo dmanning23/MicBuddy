@@ -38,11 +38,6 @@ namespace MicBuddy
 		private int SampleToByte;
 
 		/// <summary>
-		/// An openal source???
-		/// </summary>
-		private int src;
-
-		/// <summary>
 		/// Sample rate used to capture data per second
 		/// </summary>
 		private const int audioSamplingRate = 22050;
@@ -193,37 +188,12 @@ namespace MicBuddy
 			{
 				continuePolling = false;
 				audio_capture.Stop();
-				ClearBuffers(0);
 			}
-		}
-
-		/// <summary>
-		/// Clears the Microphone buffers
-		/// </summary>
-		/// <param name="input">Which buffer</param>
-		private void ClearBuffers(int input)
-		{
-			int[] freedbuffers;
-			if (input == 0)
-			{
-				int BuffersProcessed;
-				AL.GetSource(src, ALGetSourcei.BuffersProcessed, out BuffersProcessed);
-				if (BuffersProcessed == 0)
-					return;
-				freedbuffers = AL.SourceUnqueueBuffers(src, BuffersProcessed);
-			}
-			else
-			{
-				freedbuffers = AL.SourceUnqueueBuffers(src, input);
-			}
-			AL.DeleteBuffers(freedbuffers);
 		}
 
 		private bool InitializeMicrophone(int samplingRate, float gain, string deviceCaptureName, ALFormat format, int bufferSize)
 		{
 			AL.Listener(ALListenerf.Gain, gain);
-
-			src = AL.GenSource();
 
 			SampleToByte = NumberOfBytesPerSample(format);
 
@@ -339,8 +309,6 @@ namespace MicBuddy
 
 			//Run a series of algorithms to decide whether a player is talking.
 			DeriveIsTalking();
-
-			ClearBuffers(0);
 		}
 
 		private void AnalyzeSound()
