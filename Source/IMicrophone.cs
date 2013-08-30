@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using OpenTK;
-using OpenTK.Audio;
-using OpenTK.Audio.OpenAL;
-
-namespace MicBuddy
+﻿
+namespace MicBuddyLib
 {
 	public interface IMicrophone
 	{

@@ -5,7 +5,7 @@ using OpenTK;
 using OpenTK.Audio;
 using OpenTK.Audio.OpenAL;
 
-namespace MicBuddy
+namespace MicBuddyLib
 {
 	public class Microphone : IMicrophone
 	{
@@ -70,7 +70,7 @@ namespace MicBuddy
 		/// <summary>
 		/// A list of all the available microphones
 		/// </summary>
-		public static IList<string> AvailableMicrophones { get; private set; }
+		public static List<string> AvailableMicrophones { get; private set; }
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is microphone valid.
