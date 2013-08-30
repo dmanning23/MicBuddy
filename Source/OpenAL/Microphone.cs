@@ -7,7 +7,7 @@ using OpenTK.Audio.OpenAL;
 
 namespace MicBuddyLib
 {
-	public class Microphone : IMicrophone
+	public class MicBuddy : IMicrophone
 	{
 		#region Fields
 
@@ -116,7 +116,7 @@ namespace MicBuddyLib
 		/// Initialize the microphone
 		/// </summary>
 		/// <param name="deviceCaptureName">Name of the Device used for capturing audio</param>
-		public Microphone(string deviceCaptureName)
+		public MicBuddy(string deviceCaptureName)
 		{
 			MicSensitivity = 0.05f;
 			CurrentVolume = 0.0f;
@@ -128,7 +128,7 @@ namespace MicBuddyLib
 		/// <summary>
 		/// Initialize the default microphone
 		/// </summary>
-		public Microphone() : this(AudioCapture.DefaultDevice)
+		public MicBuddy() : this(AudioCapture.DefaultDevice)
 		{
 		}
 
@@ -139,13 +139,14 @@ namespace MicBuddyLib
 		public static void EnumerateMicrophones()
 		{
 			// Add available capture devices to the combo box.
-			AvailableMicrophones = AudioCapture.AvailableDevices;
+			AvailableMicrophones = new List<string>();
+			IList<string> mics = AudioCapture.AvailableDevices;
 			int i = 0;
-			while (i < AvailableMicrophones.Count)
+			foreach (var mic in mics)
 			{
-				if (String.IsNullOrEmpty(AvailableMicrophones[i]))
+				if (!String.IsNullOrEmpty(mic))
 				{
-					AvailableMicrophones.RemoveAt(i);
+					AvailableMicrophones.Add(mic);
 				}
 				else
 				{

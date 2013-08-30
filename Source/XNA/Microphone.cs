@@ -41,7 +41,12 @@ namespace MicBuddyLib
 		/// <summary>
 		/// A list of all the available microphones
 		/// </summary>
-		public static List<Microphone> AvailableMicrophones { get; private set; }
+		public static List<string> AvailableMicrophones { get; private set; }
+
+		/// <summary>
+		/// Map all the mic names to microphone instances
+		/// </summary>
+		private static Dictionary<string, Microphone> MicDict { get; set; }
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is microphone valid.
@@ -87,19 +92,19 @@ namespace MicBuddyLib
 		/// Initialize the microphone
 		/// </summary>
 		/// <param name="deviceCaptureName">Name of the Device used for capturing audio</param>
-		public MicBuddy(Microphone deviceCaptureName)
+		public MicBuddy(string deviceCaptureName)
 		{
-			_Mic = deviceCaptureName;
+			_Mic = MicBuddy.MicDict[deviceCaptureName];
 			MicSensitivity = 0.05f;
 			CurrentVolume = 0.0f;
 			AverageVolume = 0.0f;
-			MicrophoneName = deviceCaptureName.Name;
+			MicrophoneName = deviceCaptureName;
 		}
 
 		/// <summary>
 		/// Initialize the default microphone
 		/// </summary>
-		public MicBuddy() : this(Microphone.Default)
+		public MicBuddy() : this(Microphone.Default.Name)
 		{
 		}
 
@@ -110,12 +115,14 @@ namespace MicBuddyLib
 		public static void EnumerateMicrophones()
 		{
 			// Add available capture devices to the combo box.
-			AvailableMicrophones = new List<Microphone>();
+			AvailableMicrophones = new List<string>();
+			MicDict = new Dictionary<string, Microphone>();
 			foreach (var dude in Microphone.All)
 			{
 				if (!String.IsNullOrEmpty(dude.Name))
 				{
-					AvailableMicrophones.Add(dude);
+					AvailableMicrophones.Add(dude.Name);
+					MicDict.Add(dude.Name, dude);
 				}
 			}
 		}
