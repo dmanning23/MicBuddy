@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MicBuddy.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("MicBuddyLib.Resource", IsApplication=false)]
 
-namespace MicBuddy.Android
+namespace MicBuddyLib
 {
 	
 	
