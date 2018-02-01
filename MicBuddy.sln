@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MicBuddy.SharedProject", "MicBuddy.SharedProject\MicBuddy.SharedProject.shproj", "{95553A0E-E566-4C47-9169-5DADAE3082EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicBuddy.WindowsDX", "MicBuddy.WindowsDX\MicBuddy.WindowsDX.csproj", "{EBD6D351-6DA6-4B82-9201-0E762ADC0FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicBuddy.Android", "MicBuddy.Android\MicBuddy.Android.csproj", "{5287B6AA-5ADC-4E12-9BC1-4B7C2B45697C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicBuddy.iOS", "MicBuddy.iOS\MicBuddy.iOS.csproj", "{E2D2B3A1-8CDA-49F6-A2E5-2002872BBBE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{777490A6-5B50-4549-A945-11F5B852346B}"
+	ProjectSection(SolutionItems) = preProject
+		buildNugetPackages.ps1 = buildNugetPackages.ps1
+		MicBuddy.nuspec = MicBuddy.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MicBuddy.SharedProject\MicBuddy.SharedProject.projitems*{5287b6aa-5adc-4e12-9bc1-4b7c2b45697c}*SharedItemsImports = 4
+		MicBuddy.SharedProject\MicBuddy.SharedProject.projitems*{95553a0e-e566-4c47-9169-5dadae3082ef}*SharedItemsImports = 13
+		MicBuddy.SharedProject\MicBuddy.SharedProject.projitems*{e2d2b3a1-8cda-49f6-a2e5-2002872bbbe8}*SharedItemsImports = 4
+		MicBuddy.SharedProject\MicBuddy.SharedProject.projitems*{ebd6d351-6da6-4b82-9201-0e762adc0faa}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBD6D351-6DA6-4B82-9201-0E762ADC0FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD6D351-6DA6-4B82-9201-0E762ADC0FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD6D351-6DA6-4B82-9201-0E762ADC0FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD6D351-6DA6-4B82-9201-0E762ADC0FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5287B6AA-5ADC-4E12-9BC1-4B7C2B45697C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5287B6AA-5ADC-4E12-9BC1-4B7C2B45697C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5287B6AA-5ADC-4E12-9BC1-4B7C2B45697C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5287B6AA-5ADC-4E12-9BC1-4B7C2B45697C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D2B3A1-8CDA-49F6-A2E5-2002872BBBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D2B3A1-8CDA-49F6-A2E5-2002872BBBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D2B3A1-8CDA-49F6-A2E5-2002872BBBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D2B3A1-8CDA-49F6-A2E5-2002872BBBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE3DD7C7-36DE-44DF-A5B2-10F79BF9ABF2}
+	EndGlobalSection
+EndGlobal

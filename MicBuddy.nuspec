@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>MicBuddy</id>
+		<version>1.0.4</version>
+		<title>MicBuddy</title>
+		<authors>dmanning23</authors>
+		<owners>dmanning23</owners>
+		<projectUrl>https://github.com/dmanning23/MicBuddy</projectUrl>
+		<licenseUrl>https://github.com/dmanning23/MicBuddy/blob/master/LICENSE.txt</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>MonoGame library for microphone management</description>
+		<releaseNotes />
+		<copyright>Copyright 2016</copyright>
+		<tags>pcl, windows phone, winphone, android, ios, windows universal, monogame</tags>
+		<dependencies>
+
+			<!--Xamarin.Android-->
+			<group targetFramework="MonoAndroid10">
+				<dependency id="MonoGame.Framework.Android" version="3.7"/>
+			</group>
+
+			<!--Xamarin.iOS Unified-->
+			<group targetFramework="Xamarin.iOS10">
+				<dependency id="MonoGame.Framework.iOS" version="3.7"/>
+			</group>
+
+
+			<group targetFramework="net451">
+				<dependency id="MonoGame.Framework.WindowsDX" version="3.7"/>
+			</group>
+
+		</dependencies>
+	</metadata>
+	<files>
+
+		<!--Xamarin.Android-->
+		<file src="MicBuddy.Android\bin\Release\MicBuddy.Android.pdb" target="lib\MonoAndroid10\MicBuddy.Android.pdb" />
+		<file src="MicBuddy.Android\bin\Release\MicBuddy.Android.dll" target="lib\MonoAndroid10\MicBuddy.Android.dll" />
+
+		<!--Xamarin.iOS Unified-->
+		<file src="MicBuddy.iOS\bin\Release\MicBuddy.iOS.pdb" target="lib\Xamarin.iOS10\MicBuddy.iOS.pdb" />
+		<file src="MicBuddy.iOS\bin\Release\MicBuddy.iOS.dll" target="lib\Xamarin.iOS10\MicBuddy.iOS.dll" />
+
+		<!--WindowsDX-->
+		<file src="MicBuddy.WindowsDX\bin\Release\MicBuddy.WindowsDX.pdb" target="lib\net451\MicBuddy.WindowsDX.pdb" />
+		<file src="MicBuddy.WindowsDX\bin\Release\MicBuddy.WindowsDX.dll" target="lib\net451\MicBuddy.WindowsDX.dll" />
+
+	</files>
+</package>

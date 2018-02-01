@@ -1,9 +1,11 @@
 ﻿
 namespace MicBuddyLib
 {
-	public interface IMicrophone
+	public interface IMicrophoneHelper
 	{
 		#region Properties
+
+		string MicrophoneName { get; }
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is microphone valid.
