@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework.Audio;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 
 namespace MicBuddyLib
 {
-	public interface IMicrophoneComponent
+	public interface IMicrophoneComponent : IGameComponent
 	{
 		string DefaultMicName { get; }
 

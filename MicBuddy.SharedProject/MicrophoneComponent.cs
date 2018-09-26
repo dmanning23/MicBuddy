@@ -55,7 +55,7 @@ namespace MicBuddyLib
 			{
 				defaultMicrophone = Microphone.All.FirstOrDefault();
 			}
-			DefaultMicName = Microphone.Default.Name;
+			DefaultMicName = Microphone.Default?.Name;
 
 			//set the default mic sensitivity
 			DefaultSensitvity = StartMicSensitvity;
@@ -71,8 +71,6 @@ namespace MicBuddyLib
 					Microphones.Add(dude.Name, dude);
 				}
 			}
-
-			
 		}
 
 		#endregion Methods
